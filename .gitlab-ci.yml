@@ -1,0 +1,12 @@
+---
+# stages that can be used by jobs and is defined globally
+stages:
+  - test
+
+# `stage` allows to group jobs into different stages,
+# and jobs of the same stage are executed in parallel
+format:
+  stage: test
+  image: golangci/golangci-lint:latest
+  script:
+    - golangci-lint -v run --enable-all
