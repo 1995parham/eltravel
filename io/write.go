@@ -30,7 +30,11 @@ func (StandardWriter) Write(results []result.Result) error {
 		fmt.Println("**************************************************")
 		fmt.Printf("type: %s", path.Route.Type())
 		fmt.Printf("reference: %s\n", path.Route.ID())
-		fmt.Printf("route: %s(%s) --> %s(%s)\n", path.Route.Src(), path.DepartureTime.Format(time.Kitchen), path.Route.Dst(), path.ArrivalTime.Format(time.Kitchen))
+		fmt.Printf(
+			"route: %s(%s) --> %s(%s)\n",
+			path.Route.Src(), path.DepartureTime.Format(time.Kitchen),
+			path.Route.Dst(), path.ArrivalTime.Format(time.Kitchen),
+		)
 		fmt.Printf("duration: %d minutes\n", int(path.Duration.Minutes()))
 
 		fmt.Printf("price: infants(%d) children(%d) adults(%d)\n", infants, children, adults)
