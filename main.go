@@ -4,8 +4,11 @@ import (
 	"fmt"
 	"log"
 	"p1/alg"
+	"p1/calc"
 	"p1/io"
-	"p1/road"
+	"p1/passenger"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -41,24 +44,24 @@ func main() {
 		log.Fatal(err)
 	}
 
-	roads := alg.Route(g, src, dst)
-
-	path := make([]road.Path, len(roads))
-	var total time.Duration
-	for i, rd := range roads {
-		dur := time.Duration(rd.Length*60/rd.SpeedLimit) * time.Minute
-
-		path[i] = road.Path{
-			Road:          rd,
-			DepartureTime: dep.Add(total),
-			ArrivalTime:   dep.Add(total).Add(dur),
-			Duration:      dur,
+	passengers := make([]passenger.Passenger, 0)
+	var rawPassengers string
+	if _, err := fmt.Scanf("%s", &rawPassengers); err != nil {
+		log.Fatal(err)
+	}
+	for _, rp := range strings.Split(rawPassengers, ",") {
+		age, err := strconv.Atoi(rp)
+		if err != nil {
+			log.Fatal(err)
 		}
-
-		total += dur
+		passengers = append(passengers, passenger.Passenger{Age: age})
 	}
 
-	if err := writer.Write(path); err != nil {
+	roads := alg.Route(g, src, dst)
+
+	result := calc.Calculate(dep, roads, passengers)
+
+	if err := writer.Write(result); err != nil {
 		log.Fatal(err)
 	}
 }
