@@ -1,0 +1,17 @@
+{
+"road_details": 
+  [{
+	"road_name": "RD01",
+	"source": "RASHT",
+	"destination": "RAMSAR",
+	"length": 200,
+	"speed_limit": 80
+
+  }, {
+	"road_name": "RD02",
+	"source": "TEHRAN",
+	"destination": "RASHT",
+	"length": 350,
+	"speed_limit": 120
+} ]
+}
