@@ -12,9 +12,10 @@
 package alg
 
 import (
+	"time"
+
 	"gitlab.com/1995parham/eltravel/passenger"
 	"gitlab.com/1995parham/eltravel/route"
-	"time"
 )
 
 type node struct {

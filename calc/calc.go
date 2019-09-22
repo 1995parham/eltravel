@@ -1,10 +1,11 @@
 package calc
 
 import (
+	"time"
+
 	"gitlab.com/1995parham/eltravel/passenger"
 	"gitlab.com/1995parham/eltravel/result"
 	"gitlab.com/1995parham/eltravel/route"
-	"time"
 )
 
 // Calculate the price and path for the given routes

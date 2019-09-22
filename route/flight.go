@@ -1,9 +1,10 @@
 package route
 
 import (
-	"gitlab.com/1995parham/eltravel/passenger"
 	"strings"
 	"time"
+
+	"gitlab.com/1995parham/eltravel/passenger"
 )
 
 // KitchenTime is a time in kitchen format

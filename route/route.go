@@ -1,8 +1,9 @@
 package route
 
 import (
-	"gitlab.com/1995parham/eltravel/passenger"
 	"time"
+
+	"gitlab.com/1995parham/eltravel/passenger"
 )
 
 // Route is an abstraction to any path between cities

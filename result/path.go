@@ -1,8 +1,9 @@
 package result
 
 import (
-	"gitlab.com/1995parham/eltravel/route"
 	"time"
+
+	"gitlab.com/1995parham/eltravel/route"
 )
 
 // Path is a road that is used for traveling

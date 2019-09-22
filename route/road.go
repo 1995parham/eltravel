@@ -1,8 +1,9 @@
 package route
 
 import (
-	"gitlab.com/1995parham/eltravel/passenger"
 	"time"
+
+	"gitlab.com/1995parham/eltravel/passenger"
 )
 
 // Road represents a route in country with its details

@@ -2,9 +2,10 @@ package io
 
 import (
 	"fmt"
+	"time"
+
 	"gitlab.com/1995parham/eltravel/result"
 	"gitlab.com/1995parham/eltravel/route"
-	"time"
 )
 
 // Writer writes the final result
