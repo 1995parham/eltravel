@@ -12,8 +12,8 @@
 package alg
 
 import (
-	"p1/passenger"
-	"p1/route"
+	"gitlab.com/1995parham/eltravel/passenger"
+	"gitlab.com/1995parham/eltravel/route"
 	"time"
 )
 

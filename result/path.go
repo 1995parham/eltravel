@@ -1,7 +1,7 @@
 package result
 
 import (
-	"p1/route"
+	"gitlab.com/1995parham/eltravel/route"
 	"time"
 )
 

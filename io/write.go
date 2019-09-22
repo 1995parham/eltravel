@@ -2,8 +2,8 @@ package io
 
 import (
 	"fmt"
-	"p1/result"
-	"p1/route"
+	"gitlab.com/1995parham/eltravel/result"
+	"gitlab.com/1995parham/eltravel/route"
 	"time"
 )
 

@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"p1/route"
+	"gitlab.com/1995parham/eltravel/route"
 )
 
 // Reader reads the input graph

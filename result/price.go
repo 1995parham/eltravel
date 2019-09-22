@@ -1,6 +1,6 @@
 package result
 
-import "p1/passenger"
+import "gitlab.com/1995parham/eltravel/passenger"
 
 // Price represents the travel price
 type Price struct {

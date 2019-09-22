@@ -1,3 +1,3 @@
-module p1
+module gitlab.com/1995parham/eltravel
 
 go 1.13

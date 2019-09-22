@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"log"
-	"p1/alg"
-	"p1/calc"
-	"p1/io"
-	"p1/passenger"
 	"strconv"
 	"strings"
 	"time"
+
+	"gitlab.com/1995parham/eltravel/alg"
+	"gitlab.com/1995parham/eltravel/calc"
+	"gitlab.com/1995parham/eltravel/io"
+	"gitlab.com/1995parham/eltravel/passenger"
 )
 
 func main() {
@@ -26,15 +27,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Println("Please enter the source:")
 	var src string
-	var dst string
 	if _, err := fmt.Scanf("%s", &src); err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("Please enter the destination:")
+	var dst string
 	if _, err := fmt.Scanf("%s", &dst); err != nil {
 		log.Fatal(err)
 	}
 
+	fmt.Println("Please enter the departure time (eg. 08:00AM):")
 	var rawDep string
 	if _, err := fmt.Scanf("%s", &rawDep); err != nil {
 		log.Fatal(err)
@@ -44,6 +49,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Println("Please enter the passengers list that are separated by comma:")
 	passengers := make([]passenger.Passenger, 0)
 	var rawPassengers string
 	if _, err := fmt.Scanf("%s", &rawPassengers); err != nil {

@@ -1,7 +1,7 @@
 package route
 
 import (
-	"p1/passenger"
+	"gitlab.com/1995parham/eltravel/passenger"
 	"strings"
 	"time"
 )

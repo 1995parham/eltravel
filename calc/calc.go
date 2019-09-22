@@ -1,9 +1,9 @@
 package calc
 
 import (
-	"p1/passenger"
-	"p1/result"
-	"p1/route"
+	"gitlab.com/1995parham/eltravel/passenger"
+	"gitlab.com/1995parham/eltravel/result"
+	"gitlab.com/1995parham/eltravel/route"
 	"time"
 )
 
