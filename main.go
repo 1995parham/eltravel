@@ -17,7 +17,7 @@ func main() {
 	var writer io.Writer
 
 	reader = io.FileReader{
-		Name: "roads.txt",
+		Name: "transportations.txt",
 	}
 	writer = io.StandardWriter{}
 
@@ -57,7 +57,7 @@ func main() {
 		passengers = append(passengers, passenger.Passenger{Age: age})
 	}
 
-	roads := alg.Route(g, src, dst)
+	roads := alg.Route(g, src, dst, dep, passengers)
 
 	result := calc.Calculate(dep, roads, passengers)
 

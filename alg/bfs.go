@@ -12,21 +12,25 @@
 package alg
 
 import (
-	"p1/road"
+	"p1/passenger"
+	"p1/route"
+	"time"
 )
 
 type node struct {
-	name  string
-	roads []road.Road
+	ts     time.Time
+	name   string
+	routes []route.Route
 }
 
 // Route find a route from src to dst in the given graph g
-func Route(g map[string][]road.Road, src string, dst string) []road.Road {
+func Route(g map[string][]route.Route, src string, dst string, dep time.Time, ps passenger.Passengers) []route.Route {
 	queue := make([]node, 0)
 
 	queue = append(queue, node{
-		name:  src,
-		roads: []road.Road{},
+		ts:     dep,
+		name:   src,
+		routes: []route.Route{},
 	})
 
 	for len(queue) != 0 {
@@ -34,19 +38,22 @@ func Route(g map[string][]road.Road, src string, dst string) []road.Road {
 		queue = queue[1:]
 
 		if root.name == dst {
-			return root.roads
+			return root.routes
 		}
 
-		for _, rd := range g[root.name] {
-			roads := make([]road.Road, len(root.roads))
-			copy(roads, root.roads)
+		for _, r := range g[root.name] {
+			if r.IsAvailable(root.ts, ps) {
+				routes := make([]route.Route, len(root.routes))
+				copy(routes, root.routes)
 
-			queue = append(queue, node{
-				name:  rd.Destination,
-				roads: append(roads, rd),
-			})
+				queue = append(queue, node{
+					ts:     r.ArrivalTime(root.ts),
+					name:   r.Dst(),
+					routes: append(routes, r),
+				})
+			}
 		}
 	}
 
-	return []road.Road{}
+	return []route.Route{}
 }

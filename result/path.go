@@ -1,13 +1,13 @@
 package result
 
 import (
-	"p1/road"
+	"p1/route"
 	"time"
 )
 
 // Path is a road that is used for traveling
 type Path struct {
-	Road          road.Road
+	Route         route.Route
 	DepartureTime time.Time
 	ArrivalTime   time.Time
 	Duration      time.Duration

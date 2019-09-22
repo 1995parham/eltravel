@@ -3,6 +3,7 @@ package io
 import (
 	"fmt"
 	"p1/result"
+	"p1/route"
 	"time"
 )
 
@@ -23,15 +24,23 @@ func (StandardWriter) Write(results []result.Result) error {
 	for _, result := range results {
 		path := result.Path
 		price := result.Price
+		children, adults, infants := price.Passengers.CountByType()
 
 		fmt.Println("**************************************************")
-		fmt.Println("type: Road")
-		fmt.Printf("reference: %s\n", path.Road.Name)
-		fmt.Printf("route: %s(%s) --> %s(%s)\n", path.Road.Source, path.DepartureTime.Format(time.Kitchen), path.Road.Destination, path.ArrivalTime.Format(time.Kitchen))
+		fmt.Printf("type: %s", path.Route.Type())
+		fmt.Printf("reference: %s\n", path.Route.ID())
+		fmt.Printf("route: %s(%s) --> %s(%s)\n", path.Route.Src(), path.DepartureTime.Format(time.Kitchen), path.Route.Dst(), path.ArrivalTime.Format(time.Kitchen))
 		fmt.Printf("duration: %d minutes\n", int(path.Duration.Minutes()))
 
-		fmt.Printf("price: infants(%d) children(%d) adults(%d)\n", price.Infants, price.Children, price.Adults)
-		fmt.Printf("\t%d car(s) required\n", price.Cars)
+		fmt.Printf("price: infants(%d) children(%d) adults(%d)\n", infants, children, adults)
+		switch r := path.Route.(type) {
+		case route.Road:
+			fmt.Printf("\t%d car(s) required\n", r.NumberOfCars(price.Passengers))
+		case route.Flight:
+			fmt.Printf("\t%d * %d\n", adults, r.PricePerPerson)
+			fmt.Printf("\t%d * %d\n", children, r.PricePerPerson/2)
+			fmt.Printf("\t%d * %d\n", infants, r.PricePerPerson/10)
+		}
 		fmt.Printf("\ttotal:  %d\n", price.Total)
 
 		totalDuration += int(path.Duration.Minutes())

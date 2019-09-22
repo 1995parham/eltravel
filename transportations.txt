@@ -1,0 +1,22 @@
+
+{
+ "road_details" :  [{
+	"road_name": "RD01",
+	"source": "RASHT",
+	"destination": "RAMSAR",
+	"length": 200,
+	"speed_limit": 80
+
+  } ],
+  "flight_details": [ {
+	"flight_name": "FL01",
+	"source": "TEHRAN",
+	"destination": "RASHT",
+	"take_off_time": "8:50AM",
+	"landing_time": "9:50AM",
+        "price_per_person": 9730000,
+        "capacity": 27
+} 
+]
+}
+

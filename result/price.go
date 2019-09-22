@@ -1,10 +1,9 @@
 package result
 
+import "p1/passenger"
+
 // Price represents the travel price
 type Price struct {
-	Total    int
-	Cars     int
-	Children int
-	Adults   int
-	Infants  int
+	Total      int
+	Passengers passenger.Passengers
 }
