@@ -1,8 +1,9 @@
 # ElTravel
-[![pipeline status](https://gitlab.com/1995parham/eltravel/badges/master/pipeline.svg?style=flat-square)](https://gitlab.com/1995parham/eltravel/commits/master)
 
 ## Introduction
-ElTravel is a travel agency in the command line.
+
+ElTravel is a travel agency in the command line with Go.
 This agency can transport people by cars or airplanes.
-This agency has an infrastructure's graph that contains roads and airways.
+This agency has an infrastructure's graph that contains roads and airways between cities.
 you can ask it about the routes between cities.
+
